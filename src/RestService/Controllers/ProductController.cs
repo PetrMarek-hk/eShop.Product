@@ -5,6 +5,8 @@ using eShop.Product.RestService.Responses.Models;
 using eShop.Product.RestService.RequestMessages;
 using Microsoft.AspNetCore.Mvc;
 using eShop.Product.RestService.Extensions;
+using eShop.Product.Contracts.Responses;
+using eShop.Product.RestService.Requests;
 
 namespace eShop.Product.RestService.Controllers
 {
@@ -46,5 +48,25 @@ namespace eShop.Product.RestService.Controllers
 
             return this.Ok(ret.ToProductResponse(this._mapper));
         }
+
+        /// <summary>
+        /// Update product description.
+        /// </summary>
+        /// <returns> The <see cref="ActionResult"/>. </returns>
+        [HttpPut("UpdateProduct")]
+        public ActionResult<IUpdateProductResponse> UpdateProduct([FromBody] UpdateProductRequest request)
+        {
+            //if (!this.ModelState.IsValid)
+            //{
+            //    throw new DataValidationException($"The data object is not valid: {this.ModelState.ToErrorString()}");
+            //}
+
+            var ret = (IUpdateProductResponseMsg)this._appLogic
+                .Handle(new UpdateProductReqMsg { productId = request.Product.Id, description = request.Product.Description });
+
+            return this.Ok(ret.ToProductResponse(this._mapper));
+
+        }
+
     }
 }

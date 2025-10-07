@@ -12,7 +12,7 @@ namespace eShop.Product.Frameworks.Persistence
 {
     public class ProductRepository : IProductRepository
     {
-        public ProductRepository() 
+        public ProductRepository()
         {
         }
         /// <summary>
@@ -48,7 +48,36 @@ namespace eShop.Product.Frameworks.Persistence
                 .ToList<eShop.Product.Types.IProduct>();
             return products;
         }
+        /// <summary>
+        /// Update product description
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="description"></param>
+        /// <returns>update product</returns>
+        public eShop.Product.Types.IProduct UpdateProduct(int id, string description)
+        {
+            var context = getContext();
+            var product = context.Products.FirstOrDefault(p => p.Id == id);
 
+            if (product != null)
+            {
+                // Modify description
+                product.Description = description;
+
+                context.SaveChanges();
+            }
+
+            var productRet = context.Products
+                .Where(p => p.Id == id)
+                .ToList<eShop.Product.Types.IProduct>()
+                .FirstOrDefault();
+            return productRet;
+        }
+
+        /// <summary>
+        /// Gets DB context
+        /// </summary>
+        /// <returns>context</returns>
         private ProductContext getContext()
         {
             var options = new DbContextOptionsBuilder<ProductContext>()

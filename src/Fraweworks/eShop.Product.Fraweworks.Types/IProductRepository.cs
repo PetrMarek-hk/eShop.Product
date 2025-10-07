@@ -23,5 +23,12 @@ namespace eShop.Product.Frameworks.Types
         /// <param name="pageSize">page size</param>
         /// <returns>list od IProduct</returns>
         IList<eShop.Product.Types.IProduct> GetProducts(int pageNumber, int pageSize);
+        /// <summary>
+        /// Update product description
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="description"></param>
+        /// <returns></returns>
+        eShop.Product.Types.IProduct UpdateProduct(int id, string description);
     }
 }

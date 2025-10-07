@@ -3,7 +3,7 @@
 using eShop.Product.Contracts;
 
 /// <summary>
-/// External lawyer data object
+/// Product class
 /// </summary>
 internal class Product : IProduct
 {
