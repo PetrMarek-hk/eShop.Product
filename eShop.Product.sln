@@ -21,7 +21,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationLogic", "Applica
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.Product.ApplicationLogic", "src\ApplicationLogic\eShop.Product.ApplicationLogic\eShop.Product.ApplicationLogic.csproj", "{F8455E60-5D4D-495D-A4E6-95E71F655A08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.Product.Types", "src\Types\eShop.Product.Types\eShop.Product.Types.csproj", "{A48184AC-1A6C-43F8-9EC7-DA15C892394B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShop.Product.Types", "src\Types\eShop.Product.Types\eShop.Product.Types.csproj", "{A48184AC-1A6C-43F8-9EC7-DA15C892394B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{3FC4E05F-6193-497F-B12D-23D12C101416}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
