@@ -4,10 +4,9 @@ using eShop.Product.ApplicationLogic.RequestMessages;
 using eShop.Product.ApplicationLogic.ResponseMessages;
 using eShop.Product.ApplicationLogic.UseCases.Models;
 using eShop.Product.Frameworks.Types;
-using eShop.Product.Types;
 
 [eShop.Product.ApplicationLogic.RequestToInteractorMapping(typeof(IGetProductByIdReqMsg))]
-internal class GetProductByIdInteractor : eShop.Product.ApplicationLogic.Interfaces.IAppLogicInteractorGen<IGetProductByIdReqMsg, IProductByIdResponseMsg>
+internal class GetProductByIdInteractor : Interfaces.IAppLogicInteractorGen<IGetProductByIdReqMsg, IProductByIdResponseMsg>
 {
     private readonly IProductRepository repository;
 
@@ -24,6 +23,5 @@ internal class GetProductByIdInteractor : eShop.Product.ApplicationLogic.Interfa
         {
             Product = ret
         };
-
     }
 }

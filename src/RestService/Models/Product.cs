@@ -5,7 +5,7 @@ using eShop.Product.Contracts;
 /// <summary>
 /// Product class
 /// </summary>
-internal class Product : IProduct
+public class Product : IProduct
 {
     /// <summary>
     /// Get or sets the product identifier.
